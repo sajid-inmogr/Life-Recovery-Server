@@ -2,6 +2,10 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import fajrRoute from "./routes/fajr.js";
+import dhuhrRoute from "./routes/dhuhr.js";
+import asrRoute from "./routes/asr.js";
+import maghribRoute from "./routes/maghrib.js";
+import ishaRoute from "./routes/isha.js";
 import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import cors from "cors";
@@ -27,6 +31,10 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/fajr", fajrRoute);
+app.use("/api/dhuhr", dhuhrRoute);
+app.use("/api/asr", asrRoute);
+app.use("/api/maghrib", maghribRoute);
+app.use("/api/isha", ishaRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 
