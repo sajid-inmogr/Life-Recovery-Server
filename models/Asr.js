@@ -8,6 +8,7 @@ const AsrSchema = new mongoose.Schema(
     },
     complete: {
       type: Boolean,
+      required: true,
       default: false,
     },
     Jamaat: {
