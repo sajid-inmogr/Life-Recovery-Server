@@ -3,11 +3,12 @@ const NamazSchema = new mongoose.Schema(
   {
     email: {
       type: String,
-      //   required: true,
-        unique: true,
+      required: true,
+      unique: true,
     },
     date: {
       type: String,
+      required: true,
     },
     fajr: {
       complete: {
