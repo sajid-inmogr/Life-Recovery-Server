@@ -23,3 +23,19 @@ export const updateNamaz = async (req, res, next) => {
     next(err);
   }
 };
+
+
+// Namazs
+export const getNamazs = async (req, res, next) => {
+  const { email, ...others } = req.query;
+  try {
+    const namazs = await Namaz.find({
+      email,
+      ...others
+    });
+    res.status(200).json(namazs);
+  } catch (err) {
+    next(err);
+  }
+};
+

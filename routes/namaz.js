@@ -1,5 +1,5 @@
 import express from "express";
-import { createNamaz, updateNamaz } from "../controllers/namaz.js";
+import { createNamaz, getNamazs, updateNamaz } from "../controllers/namaz.js";
 
 const router = express.Router();
 
@@ -8,5 +8,8 @@ router.post("/", createNamaz);
 
 //UPDATE
 router.put("/:id", updateNamaz);
+
+//UPDATE
+router.get("/", getNamazs);
 
 export default router;
