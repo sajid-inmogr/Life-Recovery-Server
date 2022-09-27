@@ -4,7 +4,7 @@ const NamazSchema = new mongoose.Schema(
     email: {
       type: String,
       //   required: true,
-      //   unique: true,
+        unique: true,
     },
     date: {
       type: String,
