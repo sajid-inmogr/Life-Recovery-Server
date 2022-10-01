@@ -4,8 +4,18 @@ export const createNamaz = async (req, res, next) => {
   const newNamaz = new Namaz(req.body);
 
   try {
-    const savedNamaz = await newNamaz.save();
-    res.status(200).json(savedNamaz);
+    const namazs = await Namaz.find({
+      email: newNamaz.email,
+      date: newNamaz.date,
+    });
+
+    if (namazs.length !== 0) {
+      res.status(200).json(namazs);
+    } else {
+      const savedNamaz = await newNamaz.save();
+      res.status(200).json(savedNamaz);
+    }
+    
   } catch (err) {
     next(err);
   }
@@ -24,18 +34,16 @@ export const updateNamaz = async (req, res, next) => {
   }
 };
 
-
 // Namazs
 export const getNamazs = async (req, res, next) => {
   const { email, ...others } = req.query;
   try {
     const namazs = await Namaz.find({
       email,
-      ...others
+      ...others,
     });
     res.status(200).json(namazs);
   } catch (err) {
     next(err);
   }
 };
-
