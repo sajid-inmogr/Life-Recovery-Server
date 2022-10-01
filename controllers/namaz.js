@@ -1,5 +1,6 @@
 import Namaz from "../models/Namaz.js";
 
+// Add Namaz
 export const createNamaz = async (req, res, next) => {
   const newNamaz = new Namaz(req.body);
 
@@ -21,6 +22,7 @@ export const createNamaz = async (req, res, next) => {
   }
 };
 
+// update Namaz
 export const updateNamaz = async (req, res, next) => {
   try {
     const updatedNamaz = await Namaz.findByIdAndUpdate(
