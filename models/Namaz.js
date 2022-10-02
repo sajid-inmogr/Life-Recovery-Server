@@ -51,7 +51,7 @@ const NamazSchema = new mongoose.Schema(
         default: true,
       },
     },
-    Namaz: {
+    maghrib: {
       complete: {
         type: Boolean,
         default: false,
