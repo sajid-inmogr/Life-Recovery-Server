@@ -14,7 +14,8 @@ export const createNamaz = async (req, res, next) => {
       res.status(200).json(namazs);
     } else {
       const savedNamaz = await newNamaz.save();
-      res.status(200).json([savedNamaz]);
+      const saveNamaz = [savedNamaz];
+      res.status(200).json(saveNamaz);
     }
   } catch (err) {
     next(err);
