@@ -7,8 +7,8 @@ import usersRoute from "./routes/users.js";
 import cors from "cors";
 
 const app = express();
-const port = process.env.PORT || 8800;
 dotenv.config();
+const port = process.env.PORT || 8800;
 
 const connect = async () => {
   try {
