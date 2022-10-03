@@ -7,6 +7,7 @@ import usersRoute from "./routes/users.js";
 import cors from "cors";
 
 const app = express();
+const port = process.env.PORT || 8800;
 dotenv.config();
 
 const connect = async () => {
@@ -30,7 +31,7 @@ app.use("/api/namaz", namazRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 
-app.listen(8800, () => {
+app.listen(port, () => {
   connect();
   console.log("Connected to backend.");
 });
