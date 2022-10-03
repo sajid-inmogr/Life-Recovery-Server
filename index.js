@@ -32,7 +32,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 
 app.get("/api", (req, res) => {
-  res.send("server api conacted", usersRoute);
+  res.send("server api conacted");
 });
 
 app.listen(port, () => {
