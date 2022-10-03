@@ -31,6 +31,10 @@ app.use("/api/namaz", namazRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 
+app.get("/", (req, res) => {
+  res.send("server conacted");
+});
+
 app.listen(port, () => {
   connect();
   console.log("Connected to backend.");
