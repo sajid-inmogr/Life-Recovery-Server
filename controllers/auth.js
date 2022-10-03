@@ -20,7 +20,6 @@ export const register = async (req, res, next) => {
       { id: user._id, isAdmin: user.isAdmin },
       process.env.JWT
     );
-    console.log(token);
 
     const { password, isAdmin, ...otherDetails } = user._doc;
     res
