@@ -34,8 +34,9 @@ app.use("/api/users", usersRoute);
 app.get("/api", (req, res) => {
   res.send("server api conacted");
 });
-
-app.listen(port, () => {
-  connect();
+connect().then(()=>{
+  app.listen(port, () => {
   console.log("Connected to backend.");
 });
+})
+
